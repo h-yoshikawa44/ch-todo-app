@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 import 'modern-css-reset/dist/reset.min.css';
 
 export const globalStyle = css`
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+
   html,
   body {
     padding: 0;
