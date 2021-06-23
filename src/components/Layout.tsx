@@ -13,7 +13,6 @@ const Layout: FC = ({ children }) => {
           name="description"
           content="devChallenges.io - Todo app | by h-yoshikawa44"
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div css={container}>
         <Header />
