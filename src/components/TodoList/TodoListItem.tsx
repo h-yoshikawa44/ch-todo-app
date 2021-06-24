@@ -31,6 +31,7 @@ const checkBoxBlock = css`
   display: inline-flex;
   flex: 1;
   align-items: center;
+  cursor: pointer;
 `;
 
 const checkBox = css`
@@ -97,6 +98,11 @@ const labelText = css`
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
+
+  &:hover,
+  input[type='checkbox'].focus-visible ~ & {
+    color: #06f;
+  }
 `;
 
 const labelTextChecked = css`

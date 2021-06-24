@@ -47,7 +47,10 @@ const button = css`
   font-weight: 600;
   cursor: pointer;
   border: none;
-  outline: none;
+
+  &:focus:not(.focus-visible) {
+    outline: none;
+  }
 `;
 
 const buttonSize = (size: Size) => {

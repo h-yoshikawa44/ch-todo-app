@@ -27,17 +27,20 @@ const tabItemLink = css`
   line-height: 17px;
   text-align: center;
   cursor: pointer;
-  outline: none;
   transition: background-color 0.3s;
 
   &:hover,
   &:focus {
     background-color: rgba(0, 0, 0, 0.04);
   }
+
+  &:focus:not(.focus-visible) {
+    outline: none;
+  }
 `;
 
 const selectedTab = css`
-  ::before {
+  &::before {
     position: absolute;
     bottom: 0;
     left: 50%;

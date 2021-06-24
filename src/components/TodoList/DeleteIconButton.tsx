@@ -20,13 +20,16 @@ const deleteButton = css`
   background-color: #fff;
   border: none;
   border-radius: 50%;
-  outline: none;
   transition: background-color 0.3s;
 
   &:hover,
   &:focus {
     /* stylelint-disable-next-line function-name-case */
     background-color: ${createRGBAColor('#EB5757', 0.3)};
+  }
+
+  &:focus:not(.focus-visible) {
+    outline: none;
   }
 `;
 

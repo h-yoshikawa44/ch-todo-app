@@ -17,9 +17,15 @@ const todoInput = css`
   line-height: 17px;
   border: 1px solid #bdbdbd;
   border-radius: 12px;
+  outline: none;
+  transition: border-color 0.3s;
 
-  ::placeholder {
+  &::placeholder {
     color: #828282;
+  }
+
+  &:focus {
+    border-color: #2f80ed;
   }
 `;
 
