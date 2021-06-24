@@ -10,20 +10,12 @@ const data: Todo[] = [
     status: 'active',
   },
   {
-    title: 'test todo2',
-    status: 'completed',
-  },
-  {
     title: 'test todo3',
     status: 'active',
   },
-  {
-    title: 'test todo4',
-    status: 'completed',
-  },
 ];
 
-const Home = () => {
+const Active = () => {
   return (
     <Layout>
       <main css={mainBlock}>
@@ -38,4 +30,4 @@ const mainBlock = css`
   padding: 16px 0;
 `;
 
-export default Home;
+export default Active;
