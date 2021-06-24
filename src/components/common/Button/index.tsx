@@ -2,7 +2,7 @@ import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import { createDarkenColor } from '@/util/color';
 
-type Size = 'sm' | 'md';
+type Size = 'md' | 'lg';
 type Color = 'primary' | 'danger';
 
 type Props = ComponentPropsWithRef<'button'> & {
@@ -33,7 +33,7 @@ const Button: FC<Props> = ({
       ]}
       {...props}
     >
-      {beforeIcon && beforeIcon}
+      {beforeIcon && <span css={beforeIconMargin}>{beforeIcon}</span>}
       {children}
     </button>
   );
@@ -45,19 +45,20 @@ const button = css`
   justify-content: center;
   font-family: Montserrat, sans-serif;
   font-weight: 600;
+  cursor: pointer;
   border: none;
   outline: none;
 `;
 
 const buttonSize = (size: Size) => {
-  if (size === 'sm') {
+  if (size === 'md') {
     return css`
-      padding: 12px 40px;
+      padding: 12px 24px;
       font-size: 12px;
       line-height: 15px;
     `;
   }
-  if (size === 'md') {
+  if (size === 'lg') {
     return css`
       padding: 20px 40px;
       font-size: 14px;
@@ -109,5 +110,9 @@ const buttonRadius = (radius: string) => {
     border-radius: ${radius};
   `;
 };
+
+const beforeIconMargin = css`
+  padding-right: 8px;
+`;
 
 export default Button;

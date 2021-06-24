@@ -7,7 +7,7 @@ const AddTodoForm: VFC = () => {
   return (
     <form css={addTodoForm}>
       <TodoInput fullWidth placeholder="add details" />
-      <Button type="submit" size="md" color="primary" shadow>
+      <Button type="submit" size="lg" color="primary" shadow>
         Add
       </Button>
     </form>

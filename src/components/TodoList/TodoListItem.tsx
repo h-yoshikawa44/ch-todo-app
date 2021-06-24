@@ -1,5 +1,6 @@
 import { VFC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
+import DeleteIconButton from '@/components/TodoList/DeleteIconButton';
 
 type Props = ComponentPropsWithRef<'li'> & {
   text: string;
@@ -9,20 +10,33 @@ type Props = ComponentPropsWithRef<'li'> & {
 const TodoListItem: VFC<Props> = ({ text, checked, ...props }) => {
   return (
     <li css={todoListItem} {...props}>
-      <label>
+      <label css={label}>
         <input css={checkBox} type="checkbox" defaultChecked={checked} />
         <span
-          css={[labelText, customCheckBox, checked && customCheckBoxChecked]}
+          css={[
+            labelText,
+            checked && labelTextChecked,
+            customCheckBox,
+            checked && customCheckBoxChecked,
+          ]}
         >
           {text}
         </span>
       </label>
+      <DeleteIconButton />
     </li>
   );
 };
 
 const todoListItem = css`
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
   list-style: none;
+`;
+
+const label = css`
+  flex: 1;
 `;
 
 const checkBox = css`
@@ -62,6 +76,10 @@ const labelText = css`
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
+`;
+
+const labelTextChecked = css`
+  text-decoration-line: line-through;
 `;
 
 export default TodoListItem;
