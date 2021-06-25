@@ -10,10 +10,10 @@ type Props = {
 const TodoLlist: VFC<Props> = ({ data }) => {
   return (
     <div css={todoListBlock}>
-      {data?.map((todo, index) => {
+      {data?.map((todo) => {
         return (
           <TodoListItem
-            key={index}
+            key={todo.id}
             text={todo.title}
             checked={todo.status === 'completed'}
           />
