@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Todo } from '@/models/Todo';
+import { TodoStatus, Todo } from '@/models/Todo';
 
 const getTodoListFromStorage = () => {
   const storageData = localStorage.getItem('todos');
@@ -17,8 +17,17 @@ const useTodoList = () => {
 
   const addTodo = (data: Todo) => {
     setTodoList((oldTodoList) => {
-      const initialData = oldTodoList ?? [];
-      return initialData.concat(data);
+      const updateData = oldTodoList ?? [];
+      return updateData.concat(data);
+    });
+  };
+
+  const changeStatusTodo = (id: string, status: TodoStatus) => {
+    setTodoList((oldTodoList) => {
+      // ただの代入だと、useEffectの第2引数の比較（shallow equals）に引っ掛からないので、sliceでコピー
+      const updateData = oldTodoList.slice();
+      updateData.find((todo) => todo.id === id).status = status;
+      return updateData;
     });
   };
 
@@ -38,7 +47,7 @@ const useTodoList = () => {
     setTodoListToStorage(todoList);
   }, [todoList]);
 
-  return { todoList, addTodo };
+  return { todoList, addTodo, changeStatusTodo };
 };
 
 export default useTodoList;

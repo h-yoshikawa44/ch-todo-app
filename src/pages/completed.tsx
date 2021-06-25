@@ -4,24 +4,24 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Layout from '@/components/Layout';
 import TodoList from '@/components/TodoList';
 import Button from '@/components/common/Button';
-import { Todo } from '@/models/Todo';
-
-const data: Todo[] = [
-  {
-    title: 'test todo2',
-    status: 'completed',
-  },
-  {
-    title: 'test todo4',
-    status: 'completed',
-  },
-];
+import { useTodo } from '@/hooks/todo';
 
 const Completed = () => {
+  const { todoList, changeStatusTodo } = useTodo();
+
+  const filterTodoList = todoList
+    ? todoList.filter((todo) => {
+        return todo.status === 'completed';
+      })
+    : [];
+
   return (
     <Layout>
       <main css={mainBlock}>
-        <TodoList data={data} />
+        <TodoList
+          data={filterTodoList}
+          changeStatusTodoFunc={changeStatusTodo}
+        />
         <div css={deleteAllBlock}>
           <Button
             size="md"
