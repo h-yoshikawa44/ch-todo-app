@@ -33,7 +33,7 @@ const TodoLlist: VFC<Props> = ({
   );
 
   return (
-    <div css={todoListBlock}>
+    <ul css={todoListBlock}>
       {data?.map((todo) => {
         return (
           <TodoListItem
@@ -46,12 +46,13 @@ const TodoLlist: VFC<Props> = ({
           />
         );
       })}
-    </div>
+    </ul>
   );
 };
 
 const todoListBlock = css`
-  padding-top: 8px;
+  padding-inline-start: 0;
+  list-style-type: none;
 `;
 
 export default TodoLlist;

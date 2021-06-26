@@ -46,7 +46,7 @@ const Completed = () => {
 };
 
 const mainBlock = css`
-  padding: 16px 0;
+  padding: 0 0 16px;
 `;
 
 const deleteAllBlock = css`

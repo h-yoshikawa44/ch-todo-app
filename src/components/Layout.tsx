@@ -24,8 +24,6 @@ const Layout: FC = ({ children }) => {
 };
 
 const container = css`
-  display: flex;
-  flex-direction: column;
   max-width: 800px;
   height: 100vh;
   padding: 0 4%;
