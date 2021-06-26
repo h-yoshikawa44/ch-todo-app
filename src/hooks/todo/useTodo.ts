@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { TodoStatus, Todo } from '@/models/Todo';
 
 const getTodoListFromStorage = () => {
@@ -15,35 +15,35 @@ const setTodoListToStorage = (todoList: Todo[]) => {
 const useTodoList = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
 
-  const addTodo = (data: Todo) => {
+  const addTodo = useCallback((data: Todo) => {
     setTodoList((oldTodoList) => {
       const updateData = oldTodoList ?? [];
       return updateData.concat(data);
     });
-  };
+  }, []);
 
-  const changeStatusTodo = (id: string, status: TodoStatus) => {
+  const changeStatusTodo = useCallback((id: string, status: TodoStatus) => {
     setTodoList((oldTodoList) => {
       // ただの代入だと、useEffectの第2引数の比較（shallow equals）に引っ掛からないので、sliceでコピー
       const updateData = oldTodoList.slice();
       updateData.find((todo) => todo.id === id).status = status;
       return updateData;
     });
-  };
+  }, []);
 
-  const deleteTodo = (id: string) => {
+  const deleteTodo = useCallback((id: string) => {
     setTodoList((oldTodoList) => {
       const updateData = oldTodoList;
       return updateData.filter((todo) => todo.id !== id);
     });
-  };
+  }, []);
 
-  const deleteCompletedTodo = () => {
+  const deleteCompletedTodo = useCallback(() => {
     setTodoList((oldTodoList) => {
       const updateData = oldTodoList;
       return updateData.filter((todo) => todo.status !== 'completed');
     });
-  };
+  }, []);
 
   useEffect(() => {
     setTodoList(getTodoListFromStorage());
