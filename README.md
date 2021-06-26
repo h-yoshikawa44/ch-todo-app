@@ -8,10 +8,10 @@
 
 <div align="center">
   <h3>
-    <!-- <a href="https://{your-demo-link.your-domain}">
+    <a href="https://todo-app-h-yoshikawa44.vercel.app/">
       Demo
     </a>
-    <span> | </span> -->
+    <span> | </span>
     <!-- <a href="https://{your-url-to-the-solution}">
       Solution
     </a>
@@ -31,6 +31,7 @@
   - [Built With](#built-with)
 - [Features](#features)
 - [How To Use](#how-to-use)
+- [learned/improved](#learnedimproved)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
@@ -38,8 +39,16 @@
 
 ## Overview
 
-<!-- ![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png) -->
-(※in preparation)
+all
+<img src="/screenshots/all.png" alt="overview - all" width="35%">
+
+active
+<img src="/screenshots/active.png" alt="overview - active" width="35%">
+
+completed
+<img src="/screenshots/completed.png" alt="overview - completed" width="35%">
+
+I created a simple todo app using LocalStorage.
 
 ### Built With
 
@@ -52,6 +61,10 @@
 
 Other major libraries
 - [emotion](https://emotion.sh/)
+- [csx](https://typestyle.github.io/#/colors)
+- [uuid](https://github.com/uuidjs/uuid)
+- [focus-visible](https://github.com/WICG/focus-visible)
+- [react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
 
 ## Features
 
@@ -59,11 +72,11 @@ Other major libraries
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
 
-- [ ] User story: I can add a new task
-- [ ] User story: I can complete a task
-- [ ] User story: I can toggle between All, Active and Completed
-- [ ] User story: I can remove one or all tasks under the Completed tab
-- [ ] User story (optional): Store the data in local storage that when I refresh the page I can still see my progress
+- [x] User story: I can add a new task
+- [x] User story: I can complete a task
+- [x] User story: I can toggle between All, Active and Completed
+- [x] User story: I can remove one or all tasks under the Completed tab
+- [x] User story (optional): Store the data in local storage that when I refresh the page I can still see my progress
 
 ## How To Use
 
@@ -84,11 +97,26 @@ $ yarn install
 $ yarn dev
 ```
 
+## learned/improved
+- How to border with adjustable length using pseudo-elements.
+- How to make flexbox horizontal with equal width regardless of the number of elements.
+- How to create a custom checkbox with keyboard operation in mind.
+- Basic usage of LocalStorage.
+- How to use LocalStorage in Next.js environment.
+- Overview of how to use React Query and LocalStorage together.(I didn't use it this time.)
+
 ## Acknowledgements
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
 
-(※in preparation)
+- [【CSS】borderの長さを調整する方法3つ：文字に応じて可変など](https://saruwakakun.com/html-css/reference/border-length)
+- [flexboxで要素数に関わらず均等幅で横並びにする](https://cly7796.net/blog/css/side-by-side-with-even-width-with-flexbox/)
+- [キーボード操作を意識したHTML/CSSコーディング](https://zenn.dev/tak_dcxi/articles/f958e96888ee47)
+- [MDN - Web Storage API の使用](https://developer.mozilla.org/ja/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
+- [localStorageのstorageイベントのタイプ判定](https://qiita.com/nakajmg/items/d1b90ba9bc56e7575a6a)
+- [Next.jsでStorageオブジェクトを使う](https://t-yng.jp/post/nextjs-storage)
+- [GitHub - react/query - Is it possible to persist cache query?](https://github.com/tannerlinsley/react-query/discussions/92)
+
 ## Contact
 
 - Website：[h-yoshikawa44.com](https://h-yoshikawa44.com)
