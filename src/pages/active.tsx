@@ -2,25 +2,24 @@ import { css } from '@emotion/react';
 import Layout from '@/components/Layout';
 import AddTodoForm from '@/components/AddTodoForm';
 import TodoList from '@/components/TodoList';
-import { Todo } from '@/models/Todo';
-
-const data: Todo[] = [
-  {
-    title: 'test todo',
-    status: 'active',
-  },
-  {
-    title: 'test todo3',
-    status: 'active',
-  },
-];
+import { useTodo } from '@/hooks/todo';
 
 const Active = () => {
+  const { todoList, addTodo, changeStatusTodo } = useTodo();
+  const filterTodoList = todoList
+    ? todoList.filter((todo) => {
+        return todo.status === 'active';
+      })
+    : [];
+
   return (
     <Layout>
       <main css={mainBlock}>
-        <AddTodoForm />
-        <TodoList data={data} />
+        <AddTodoForm addTodoFunc={addTodo} />
+        <TodoList
+          data={filterTodoList}
+          changeStatusTodoFunc={changeStatusTodo}
+        />
       </main>
     </Layout>
   );

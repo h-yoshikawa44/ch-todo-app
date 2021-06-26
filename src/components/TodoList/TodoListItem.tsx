@@ -3,19 +3,34 @@ import { css } from '@emotion/react';
 import DeleteIconButton from '@/components/TodoList/DeleteIconButton';
 
 type Props = ComponentPropsWithRef<'li'> & {
+  todoId: string;
   text: string;
   checked: boolean;
+  onCheck: (id: string) => (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  onDelete?: (id: string) => void;
 };
 
-const TodoListItem: VFC<Props> = ({ text, checked, ...props }) => {
+const TodoListItem: VFC<Props> = ({
+  todoId,
+  text,
+  checked,
+  onCheck,
+  onDelete,
+  ...props
+}) => {
   return (
     <li css={todoListItem} {...props}>
       <label css={checkBoxBlock}>
-        <input css={checkBox} type="checkbox" defaultChecked={checked} />
+        <input
+          css={checkBox}
+          type="checkbox"
+          checked={checked}
+          onChange={onCheck(todoId)}
+        />
         <span css={[customCheckBox, checked && customCheckBoxChecked]} />
         <span css={[labelText, checked && labelTextChecked]}>{text}</span>
       </label>
-      <DeleteIconButton />
+      {onDelete && <DeleteIconButton todoId={todoId} onDelete={onDelete} />}
     </li>
   );
 };

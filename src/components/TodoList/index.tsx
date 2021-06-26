@@ -1,21 +1,48 @@
-import { VFC } from 'react';
+import { VFC, useCallback } from 'react';
 import { css } from '@emotion/react';
 import TodoListItem from '@/components/TodoList/TodoListItem';
-import { Todo } from '@/models/Todo';
+import { TodoStatus, Todo } from '@/models/Todo';
 
 type Props = {
   data: Todo[];
+  changeStatusTodoFunc: (id: string, status: TodoStatus) => void;
+  deleteTodoFunc?: (id: string) => void;
 };
 
-const TodoLlist: VFC<Props> = ({ data }) => {
+const TodoLlist: VFC<Props> = ({
+  data,
+  changeStatusTodoFunc,
+  deleteTodoFunc,
+}) => {
+  const handleCheckTodo = useCallback(
+    (id: string) => (ev: React.ChangeEvent<HTMLInputElement>) => {
+      if (ev.target.checked) {
+        changeStatusTodoFunc(id, 'completed');
+      } else {
+        changeStatusTodoFunc(id, 'active');
+      }
+    },
+    [changeStatusTodoFunc]
+  );
+
+  const handleDeleteTodo = useCallback(
+    (id: string) => {
+      deleteTodoFunc(id);
+    },
+    [deleteTodoFunc]
+  );
+
   return (
     <div css={todoListBlock}>
-      {data?.map((todo, index) => {
+      {data?.map((todo) => {
         return (
           <TodoListItem
-            key={index}
+            key={todo.id}
+            todoId={todo.id}
             text={todo.title}
             checked={todo.status === 'completed'}
+            onCheck={handleCheckTodo}
+            onDelete={deleteTodoFunc ? handleDeleteTodo : undefined}
           />
         );
       })}

@@ -4,11 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { createRGBAColor } from '@/util/color';
 
-type Props = ComponentPropsWithRef<'button'>;
+type Props = ComponentPropsWithRef<'button'> & {
+  todoId: string;
+  onDelete?: (id: string) => void;
+};
 
-const DeleteIconButton: VFC<Props> = ({ ...props }) => {
+const DeleteIconButton: VFC<Props> = ({ todoId, onDelete, ...props }) => {
   return (
-    <button css={deleteButton} {...props}>
+    <button
+      css={deleteButton}
+      onClick={() => {
+        onDelete(todoId);
+      }}
+      {...props}
+    >
       <FontAwesomeIcon icon={faTrash} color="#EB5757" />
     </button>
   );

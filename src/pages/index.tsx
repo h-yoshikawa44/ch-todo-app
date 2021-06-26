@@ -2,33 +2,15 @@ import { css } from '@emotion/react';
 import Layout from '@/components/Layout';
 import AddTodoForm from '@/components/AddTodoForm';
 import TodoList from '@/components/TodoList';
-import { Todo } from '@/models/Todo';
-
-const data: Todo[] = [
-  {
-    title: 'test todo',
-    status: 'active',
-  },
-  {
-    title: 'test todo2',
-    status: 'completed',
-  },
-  {
-    title: 'test todo3',
-    status: 'active',
-  },
-  {
-    title: 'test todo4',
-    status: 'completed',
-  },
-];
+import { useTodo } from '@/hooks/todo';
 
 const Home = () => {
+  const { todoList, addTodo, changeStatusTodo } = useTodo();
   return (
     <Layout>
       <main css={mainBlock}>
-        <AddTodoForm />
-        <TodoList data={data} />
+        <AddTodoForm addTodoFunc={addTodo} />
+        <TodoList data={todoList} changeStatusTodoFunc={changeStatusTodo} />
       </main>
     </Layout>
   );

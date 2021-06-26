@@ -1,33 +1,41 @@
+import { useCallback } from 'react';
 import { css } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Layout from '@/components/Layout';
 import TodoList from '@/components/TodoList';
 import Button from '@/components/common/Button';
-import { Todo } from '@/models/Todo';
-
-const data: Todo[] = [
-  {
-    title: 'test todo2',
-    status: 'completed',
-  },
-  {
-    title: 'test todo4',
-    status: 'completed',
-  },
-];
+import { useTodo } from '@/hooks/todo';
 
 const Completed = () => {
+  const { todoList, changeStatusTodo, deleteTodo, deleteCompletedTodo } =
+    useTodo();
+
+  const filterTodoList = todoList
+    ? todoList.filter((todo) => {
+        return todo.status === 'completed';
+      })
+    : [];
+
+  const handleDeleteCompletedTodo = useCallback(() => {
+    deleteCompletedTodo();
+  }, [deleteCompletedTodo]);
+
   return (
     <Layout>
       <main css={mainBlock}>
-        <TodoList data={data} />
+        <TodoList
+          data={filterTodoList}
+          changeStatusTodoFunc={changeStatusTodo}
+          deleteTodoFunc={deleteTodo}
+        />
         <div css={deleteAllBlock}>
           <Button
             size="md"
             color="danger"
             radius="4px"
             beforeIcon={<FontAwesomeIcon icon={faTrash} />}
+            onClick={handleDeleteCompletedTodo}
           >
             delete all
           </Button>
