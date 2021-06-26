@@ -31,6 +31,20 @@ const useTodoList = () => {
     });
   };
 
+  const deleteTodo = (id: string) => {
+    setTodoList((oldTodoList) => {
+      const updateData = oldTodoList;
+      return updateData.filter((todo) => todo.id !== id);
+    });
+  };
+
+  const deleteCompletedTodo = () => {
+    setTodoList((oldTodoList) => {
+      const updateData = oldTodoList;
+      return updateData.filter((todo) => todo.status !== 'completed');
+    });
+  };
+
   useEffect(() => {
     setTodoList(getTodoListFromStorage());
     window.addEventListener('storage', (ev: StorageEvent) => {
@@ -47,7 +61,13 @@ const useTodoList = () => {
     setTodoListToStorage(todoList);
   }, [todoList]);
 
-  return { todoList, addTodo, changeStatusTodo };
+  return {
+    todoList,
+    addTodo,
+    changeStatusTodo,
+    deleteTodo,
+    deleteCompletedTodo,
+  };
 };
 
 export default useTodoList;

@@ -7,6 +7,7 @@ type Props = ComponentPropsWithRef<'li'> & {
   text: string;
   checked: boolean;
   onCheck: (id: string) => (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  onDelete?: (id: string) => void;
 };
 
 const TodoListItem: VFC<Props> = ({
@@ -14,6 +15,7 @@ const TodoListItem: VFC<Props> = ({
   text,
   checked,
   onCheck,
+  onDelete,
   ...props
 }) => {
   return (
@@ -28,7 +30,7 @@ const TodoListItem: VFC<Props> = ({
         <span css={[customCheckBox, checked && customCheckBoxChecked]} />
         <span css={[labelText, checked && labelTextChecked]}>{text}</span>
       </label>
-      <DeleteIconButton />
+      {onDelete && <DeleteIconButton todoId={todoId} onDelete={onDelete} />}
     </li>
   );
 };

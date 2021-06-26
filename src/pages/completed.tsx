@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { css } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +8,8 @@ import Button from '@/components/common/Button';
 import { useTodo } from '@/hooks/todo';
 
 const Completed = () => {
-  const { todoList, changeStatusTodo } = useTodo();
+  const { todoList, changeStatusTodo, deleteTodo, deleteCompletedTodo } =
+    useTodo();
 
   const filterTodoList = todoList
     ? todoList.filter((todo) => {
@@ -15,12 +17,17 @@ const Completed = () => {
       })
     : [];
 
+  const handleDeleteCompletedTodo = useCallback(() => {
+    deleteCompletedTodo();
+  }, [deleteCompletedTodo]);
+
   return (
     <Layout>
       <main css={mainBlock}>
         <TodoList
           data={filterTodoList}
           changeStatusTodoFunc={changeStatusTodo}
+          deleteTodoFunc={deleteTodo}
         />
         <div css={deleteAllBlock}>
           <Button
@@ -28,6 +35,7 @@ const Completed = () => {
             color="danger"
             radius="4px"
             beforeIcon={<FontAwesomeIcon icon={faTrash} />}
+            onClick={handleDeleteCompletedTodo}
           >
             delete all
           </Button>

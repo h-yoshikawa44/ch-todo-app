@@ -6,9 +6,14 @@ import { TodoStatus, Todo } from '@/models/Todo';
 type Props = {
   data: Todo[];
   changeStatusTodoFunc: (id: string, status: TodoStatus) => void;
+  deleteTodoFunc?: (id: string) => void;
 };
 
-const TodoLlist: VFC<Props> = ({ data, changeStatusTodoFunc }) => {
+const TodoLlist: VFC<Props> = ({
+  data,
+  changeStatusTodoFunc,
+  deleteTodoFunc,
+}) => {
   const handleCheckTodo = useCallback(
     (id: string) => (ev: React.ChangeEvent<HTMLInputElement>) => {
       if (ev.target.checked) {
@@ -18,6 +23,13 @@ const TodoLlist: VFC<Props> = ({ data, changeStatusTodoFunc }) => {
       }
     },
     [changeStatusTodoFunc]
+  );
+
+  const handleDeleteTodo = useCallback(
+    (id: string) => {
+      deleteTodoFunc(id);
+    },
+    [deleteTodoFunc]
   );
 
   return (
@@ -30,6 +42,7 @@ const TodoLlist: VFC<Props> = ({ data, changeStatusTodoFunc }) => {
             text={todo.title}
             checked={todo.status === 'completed'}
             onCheck={handleCheckTodo}
+            onDelete={deleteTodoFunc ? handleDeleteTodo : undefined}
           />
         );
       })}
