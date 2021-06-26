@@ -40,13 +40,13 @@
 ## Overview
 
 all  
-<img src="/screenshots/all.png" alt="overview - all" width="70%">
+<img src="/screenshots/all.png" alt="overview - all" width="90%">
 
 active  
-<img src="/screenshots/active.png" alt="overview - active" width="70%">
+<img src="/screenshots/active.png" alt="overview - active" width="90%">
 
 completed  
-<img src="/screenshots/completed.png" alt="overview - completed" width="70%">
+<img src="/screenshots/completed.png" alt="overview - completed" width="90%">
 
 I created a simple todo app using LocalStorage.
 
