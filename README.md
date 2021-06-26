@@ -12,10 +12,10 @@
       Demo
     </a>
     <span> | </span>
-    <!-- <a href="https://{your-url-to-the-solution}">
+    <a href="https://devchallenges.io/solutions/BTvVlLhztEQ8Fz8UJ1Rf">
       Solution
     </a>
-    <span> | </span> -->
+    <span> | </span>
     <a href="https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5">
       Challenge
     </a>
@@ -39,14 +39,14 @@
 
 ## Overview
 
-all
-<img src="/screenshots/all.png" alt="overview - all" width="35%">
+all  
+<img src="/screenshots/all.png" alt="overview - all" width="70%">
 
-active
-<img src="/screenshots/active.png" alt="overview - active" width="35%">
+active  
+<img src="/screenshots/active.png" alt="overview - active" width="70%">
 
-completed
-<img src="/screenshots/completed.png" alt="overview - completed" width="35%">
+completed  
+<img src="/screenshots/completed.png" alt="overview - completed" width="70%">
 
 I created a simple todo app using LocalStorage.
 
