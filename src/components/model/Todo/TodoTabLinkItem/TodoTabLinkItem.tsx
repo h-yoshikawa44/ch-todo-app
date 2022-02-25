@@ -10,10 +10,8 @@ const TabLinkItem: FC<Props> = ({ href, children, ...props }) => {
   const router = useRouter();
   const selected = router.pathname === href;
   return (
-    <Link href={href} {...props}>
-      <a css={[tabItemLink, selected && selectedTab]} href={href as string}>
-        {children}
-      </a>
+    <Link href={href} {...props} passHref>
+      <a css={[tabItemLink, selected && selectedTab]}>{children}</a>
     </Link>
   );
 };
