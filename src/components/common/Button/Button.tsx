@@ -49,7 +49,7 @@ const button = css`
   border: none;
 
   &:focus:not(.focus-visible) {
-    outline: none;
+    outline-color: transparent;
   }
 `;
 

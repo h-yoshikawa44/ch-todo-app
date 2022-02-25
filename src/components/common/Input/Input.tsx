@@ -5,11 +5,11 @@ type Props = ComponentPropsWithRef<'input'> & {
   fullWidth?: boolean;
 };
 
-const TodoInput: VFC<Props> = ({ fullWidth = false, ...props }) => {
-  return <input css={[todoInput, fullWidth && fullWidthSize]} {...props} />;
+const Input: VFC<Props> = ({ fullWidth = false, ...props }) => {
+  return <input css={[input, fullWidth && fullWidthSize]} {...props} />;
 };
 
-const todoInput = css`
+const input = css`
   padding: 16px 16px;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
@@ -33,4 +33,4 @@ const fullWidthSize = css`
   width: 100%;
 `;
 
-export default TodoInput;
+export default Input;

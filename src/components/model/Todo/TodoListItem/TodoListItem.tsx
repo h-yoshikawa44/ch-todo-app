@@ -1,6 +1,6 @@
 import { VFC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
-import DeleteIconButton from '@/components/TodoList/DeleteIconButton';
+import DeleteIconButton from '@/components/common/DeleteIconButton';
 
 type Props = ComponentPropsWithRef<'li'> & {
   todoId: string;

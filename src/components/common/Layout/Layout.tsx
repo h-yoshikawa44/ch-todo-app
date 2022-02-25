@@ -2,18 +2,11 @@ import { FC } from 'react';
 import Head from 'next/head';
 import { css } from '@emotion/react';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Footer from '@/components/common/Footer';
 
 const Layout: FC = ({ children }) => {
   return (
     <div>
-      <Head>
-        <title>Todo app</title>
-        <meta
-          name="description"
-          content="devChallenges.io - Todo app | by h-yoshikawa44"
-        />
-      </Head>
       <div css={container}>
         <Header />
         {children}

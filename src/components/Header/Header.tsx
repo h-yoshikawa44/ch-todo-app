@@ -1,6 +1,6 @@
 import { VFC } from 'react';
 import { css } from '@emotion/react';
-import Tab from '@/components/Header/Tab';
+import Tab from '@/components/model/Todo/TodoTab';
 
 const Header: VFC = () => {
   return (

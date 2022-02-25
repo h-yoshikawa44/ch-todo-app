@@ -1,32 +1,20 @@
-import { css } from '@emotion/react';
-import Layout from '@/components/Layout';
-import AddTodoForm from '@/components/AddTodoForm';
-import TodoList from '@/components/TodoList';
-import { useTodo } from '@/hooks/todo';
+import { Fragment } from 'react';
+import Head from 'next/head';
+import ActivePage from '@/components/page/Active';
 
 const Active = () => {
-  const { todoList, addTodo, changeStatusTodo } = useTodo();
-  const filterTodoList = todoList
-    ? todoList.filter((todo) => {
-        return todo.status === 'active';
-      })
-    : [];
-
   return (
-    <Layout>
-      <main css={mainBlock}>
-        <AddTodoForm addTodoFunc={addTodo} />
-        <TodoList
-          data={filterTodoList}
-          changeStatusTodoFunc={changeStatusTodo}
+    <Fragment>
+      <Head>
+        <title>Active - Todo app</title>
+        <meta
+          name="description"
+          content={`devChallenges.io - Todo app - Active | by h-yoshikawa44`}
         />
-      </main>
-    </Layout>
+      </Head>
+      <ActivePage />
+    </Fragment>
   );
 };
-
-const mainBlock = css`
-  padding: 16px 0;
-`;
 
 export default Active;

@@ -1,7 +1,7 @@
 import { VFC, useState, useCallback } from 'react';
 import { css } from '@emotion/react';
 import { v4 as uuidv4 } from 'uuid';
-import TodoInput from '@/components/AddTodoForm/TodoInput';
+import TodoInput from '@/components/common/Input';
 import Button from '@/components/common/Button';
 import { Todo } from '@/models/Todo';
 
