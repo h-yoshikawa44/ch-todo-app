@@ -9,7 +9,7 @@ const Home: VFC = () => {
   return (
     <main css={mainBlock}>
       <AddTodoForm addTodoFunc={addTodo} />
-      <TodoList data={todoList} changeStatusTodoFunc={changeStatusTodo} />
+      <TodoList data={todoList ?? []} changeStatusTodoFunc={changeStatusTodo} />
     </main>
   );
 };

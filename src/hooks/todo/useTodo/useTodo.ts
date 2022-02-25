@@ -8,12 +8,12 @@ const getTodoListFromStorage = () => {
   return data;
 };
 
-const setTodoListToStorage = (todoList: Todo[]) => {
+const setTodoListToStorage = (todoList: Todo[] | null) => {
   localStorage.setItem('todos', JSON.stringify(todoList));
 };
 
 const useTodoList = () => {
-  const [todoList, setTodoList] = useState<Todo[]>([]);
+  const [todoList, setTodoList] = useState<Todo[] | null>([]);
 
   const addTodo = useCallback((data: Todo) => {
     setTodoList((oldTodoList) => {
@@ -25,15 +25,21 @@ const useTodoList = () => {
   const changeStatusTodo = useCallback((id: string, status: TodoStatus) => {
     setTodoList((oldTodoList) => {
       // ただの代入だと、useEffectの第2引数の比較（shallow equals）に引っ掛からないので、sliceでコピー
-      const updateData = oldTodoList.slice();
-      updateData.find((todo) => todo.id === id).status = status;
-      return updateData;
+      const updateTodoList = oldTodoList ? oldTodoList.slice() : [];
+      const index = updateTodoList.findIndex((todo) => todo.id === id);
+      if (index > -1) {
+        updateTodoList[index].status = status;
+      }
+      return updateTodoList;
     });
   }, []);
 
   const deleteTodo = useCallback((id: string) => {
     setTodoList((oldTodoList) => {
       const updateData = oldTodoList;
+      if (!updateData) {
+        return oldTodoList;
+      }
       return updateData.filter((todo) => todo.id !== id);
     });
   }, []);
@@ -41,6 +47,9 @@ const useTodoList = () => {
   const deleteCompletedTodo = useCallback(() => {
     setTodoList((oldTodoList) => {
       const updateData = oldTodoList;
+      if (!updateData) {
+        return oldTodoList;
+      }
       return updateData.filter((todo) => todo.status !== 'completed');
     });
   }, []);

@@ -4,7 +4,7 @@ import TodoListItem from '@/components/model/Todo/TodoListItem';
 import { TodoStatus, Todo } from '@/models/Todo';
 
 type Props = {
-  data: Todo[];
+  data?: Todo[];
   changeStatusTodoFunc: (id: string, status: TodoStatus) => void;
   deleteTodoFunc?: (id: string) => void;
 };
