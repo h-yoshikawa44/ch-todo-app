@@ -4,7 +4,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
+        <Head lang="ja">
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -16,6 +16,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" href="/favicon.ico" />
+          <meta name="robots" content="noindex, nofollow" />
         </Head>
         <body>
           <Main />
