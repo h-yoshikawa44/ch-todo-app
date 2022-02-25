@@ -1,14 +1,14 @@
-import { VFC, useCallback } from 'react';
+import { VFC, useContext, useCallback } from 'react';
 import { css } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import TodoList from '@/components/model/Todo/TodoList';
 import Button from '@/components/common/Button';
-import { useTodo } from '@/hooks/todo';
+import { TodoContext } from '@/components/context/TodoContext';
 
 const Completed: VFC = () => {
   const { todoList, changeStatusTodo, deleteTodo, deleteCompletedTodo } =
-    useTodo();
+    useContext(TodoContext);
 
   const filterTodoList = todoList
     ? todoList.filter((todo) => {
