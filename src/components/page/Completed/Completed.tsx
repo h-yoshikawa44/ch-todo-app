@@ -1,7 +1,6 @@
 import { VFC, useContext, useCallback } from 'react';
 import { css } from '@emotion/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Delete } from '@emotion-icons/material-rounded/Delete';
 import TodoList from '@/components/model/Todo/TodoList';
 import Button from '@/components/common/Button';
 import { TodoContext } from '@/components/context/TodoContext';
@@ -32,7 +31,7 @@ const Completed: VFC = () => {
           size="md"
           color="danger"
           radius="4px"
-          beforeIcon={<FontAwesomeIcon icon={faTrash} />}
+          beforeIcon={<Delete size={20} />}
           onClick={handleDeleteCompletedTodo}
         >
           delete all

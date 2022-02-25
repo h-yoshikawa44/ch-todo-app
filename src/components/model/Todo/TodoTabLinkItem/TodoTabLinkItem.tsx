@@ -2,6 +2,7 @@ import { FC, ComponentPropsWithRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { css } from '@emotion/react';
+import { colors, fonts } from '@/styles/constants';
 
 type Props = ComponentPropsWithRef<typeof Link>;
 
@@ -21,7 +22,7 @@ const tabItemLink = css`
   position: relative;
   width: 100%;
   padding: 16px 12%;
-  font-family: Montserrat, sans-serif;
+  font-family: ${fonts.montserrat};
   font-size: 14px;
   font-weight: 600;
   line-height: 17px;
@@ -48,7 +49,7 @@ const selectedTab = css`
     width: 50%;
     height: 4px;
     content: '';
-    background-color: #2f80ed;
+    background-color: ${colors.primary};
     border-radius: 4px 4px 0 0;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);

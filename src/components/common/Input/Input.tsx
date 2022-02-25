@@ -1,5 +1,6 @@
 import { VFC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
+import { fonts, colors } from '@/styles/constants';
 
 type Props = ComponentPropsWithRef<'input'> & {
   fullWidth?: boolean;
@@ -11,21 +12,21 @@ const Input: VFC<Props> = ({ fullWidth = false, ...props }) => {
 
 const input = css`
   padding: 16px 16px;
-  font-family: Montserrat, sans-serif;
+  font-family: ${fonts.montserrat};
   font-size: 14px;
   font-weight: normal;
   line-height: 17px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid ${colors.border};
   border-radius: 12px;
   outline: none;
   transition: border-color 0.3s;
 
   &::placeholder {
-    color: #828282;
+    color: ${colors.placeHolder};
   }
 
   &:focus {
-    border-color: #2f80ed;
+    border-color: ${colors.primary};
   }
 `;
 
