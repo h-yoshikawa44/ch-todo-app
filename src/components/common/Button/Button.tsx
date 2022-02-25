@@ -1,6 +1,7 @@
 import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
-import { createDarkenColor } from '@/util/color';
+import { createDarkenColor } from '@/lib/color';
+import { fonts, colors } from '@/styles/constants';
 
 type Size = 'md' | 'lg';
 type Color = 'primary' | 'danger';
@@ -43,13 +44,13 @@ const button = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: Montserrat, sans-serif;
+  font-family: ${fonts.montserrat};
   font-weight: 600;
   cursor: pointer;
   border: none;
 
   &:focus:not(.focus-visible) {
-    outline: none;
+    outline-color: transparent;
   }
 `;
 
@@ -72,20 +73,20 @@ const buttonSize = (size: Size) => {
 
 const buttonColor = (color: Color) => {
   const textColor = css`
-    color: #fff;
+    color: ${colors.white};
     box-shadow: 0 2px 6px rgba(127, 177, 243, 0.4);
   `;
   if (color === 'primary') {
     return css`
       ${textColor}
 
-      background-color: #2f80ed;
+      background-color: ${colors.primary};
       transition: background-color 0.3s;
 
       &:hover,
       &:focus {
         /* stylelint-disable-next-line function-name-case */
-        background-color: ${createDarkenColor('#2f80ed', 0.15)};
+        background-color: ${createDarkenColor(colors.primary, 0.15)};
       }
     `;
   }
@@ -93,12 +94,12 @@ const buttonColor = (color: Color) => {
     return css`
       ${textColor}
 
-      background-color: #EB5757;
+      background-color: ${colors.danger};
 
       &:hover,
       &:focus {
         /* stylelint-disable-next-line function-name-case */
-        background-color: ${createDarkenColor('#EB5757', 0.15)};
+        background-color: ${createDarkenColor(colors.danger, 0.15)};
       }
     `;
   }

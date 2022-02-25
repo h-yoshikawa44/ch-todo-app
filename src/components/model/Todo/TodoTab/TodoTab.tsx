@@ -1,6 +1,6 @@
 import { VFC } from 'react';
 import { css } from '@emotion/react';
-import TabLinkItem from '@/components/Header/TabLinkItem';
+import TabLinkItem from '@/components/model/Todo/TodoTabLinkItem';
 
 const Tab: VFC = () => {
   return (

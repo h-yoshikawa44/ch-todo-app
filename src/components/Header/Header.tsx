@@ -1,6 +1,7 @@
 import { VFC } from 'react';
 import { css } from '@emotion/react';
-import Tab from '@/components/Header/Tab';
+import Tab from '@/components/model/Todo/TodoTab';
+import { fonts } from '@/styles/constants';
 
 const Header: VFC = () => {
   return (
@@ -13,7 +14,7 @@ const Header: VFC = () => {
 
 const title = css`
   margin: 32px 0 40px;
-  font-family: Raleway, sans-serif;
+  font-family: ${fonts.raleway};
   font-size: 36px;
   font-style: normal;
   font-weight: bold;

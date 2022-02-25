@@ -1,10 +1,10 @@
 import { VFC, useCallback } from 'react';
 import { css } from '@emotion/react';
-import TodoListItem from '@/components/TodoList/TodoListItem';
+import TodoListItem from '@/components/model/Todo/TodoListItem';
 import { TodoStatus, Todo } from '@/models/Todo';
 
 type Props = {
-  data: Todo[];
+  data?: Todo[];
   changeStatusTodoFunc: (id: string, status: TodoStatus) => void;
   deleteTodoFunc?: (id: string) => void;
 };
@@ -27,7 +27,9 @@ const TodoLlist: VFC<Props> = ({
 
   const handleDeleteTodo = useCallback(
     (id: string) => {
-      deleteTodoFunc(id);
+      if (deleteTodoFunc) {
+        deleteTodoFunc(id);
+      }
     },
     [deleteTodoFunc]
   );

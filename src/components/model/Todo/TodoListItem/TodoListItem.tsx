@@ -1,6 +1,7 @@
 import { VFC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
-import DeleteIconButton from '@/components/TodoList/DeleteIconButton';
+import DeleteIconButton from '@/components/common/DeleteIconButton';
+import { fonts, colors } from '@/styles/constants';
 
 type Props = ComponentPropsWithRef<'li'> & {
   todoId: string;
@@ -78,7 +79,7 @@ const customCheckBox = css`
     left: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid #828282;
+    border: 1px solid ${colors.gray};
     border-radius: 4px;
   }
 
@@ -87,8 +88,8 @@ const customCheckBox = css`
     left: 0.25em;
     width: 1em;
     height: 0.5em;
-    border-bottom: 2px solid #fff;
-    border-left: 2px solid #fff;
+    border-bottom: 2px solid ${colors.white};
+    border-left: 2px solid ${colors.white};
     opacity: 0;
     transition: opacity 0.5s;
     transform: rotate(-40deg);
@@ -97,8 +98,8 @@ const customCheckBox = css`
 
 const customCheckBoxChecked = css`
   &::before {
-    background-color: #06f;
-    border-color: #06f;
+    background-color: ${colors.blueDarken};
+    border-color: ${colors.blueDarken};
   }
 
   &::after {
@@ -108,14 +109,14 @@ const customCheckBoxChecked = css`
 
 const labelText = css`
   margin-left: 8px;
-  font-family: Montserrat, sans-serif;
+  font-family: ${fonts.montserrat};
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
 
   &:hover,
   input[type='checkbox'].focus-visible ~ & {
-    color: #06f;
+    color: ${colors.blueDarken};
   }
 `;
 
