@@ -1,4 +1,4 @@
-import { VFC, ComponentPropsWithRef } from 'react';
+import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import { Delete } from '@emotion-icons/material-rounded/Delete';
 import { colors } from '@/styles/constants';
@@ -9,7 +9,7 @@ type Props = ComponentPropsWithRef<'button'> & {
   onDelete: (id: string) => void;
 };
 
-const DeleteIconButton: VFC<Props> = ({ todoId, onDelete, ...props }) => {
+const DeleteIconButton: FC<Props> = ({ todoId, onDelete, ...props }) => {
   return (
     <button
       css={deleteButton}

@@ -1,8 +1,8 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import Layout from '@/components/common/Layout';
 import Active from './Active';
 
-const ActivePage: VFC = () => {
+const ActivePage: FC = () => {
   return (
     <Layout>
       <Active />

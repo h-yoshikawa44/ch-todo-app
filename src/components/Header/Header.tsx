@@ -1,9 +1,9 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import { css } from '@emotion/react';
 import Tab from '@/components/model/Todo/TodoTab';
 import { fonts } from '@/styles/constants';
 
-const Header: VFC = () => {
+const Header: FC = () => {
   return (
     <header>
       <h1 css={title}>#todo</h1>

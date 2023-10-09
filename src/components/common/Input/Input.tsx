@@ -1,4 +1,4 @@
-import { VFC, ComponentPropsWithRef } from 'react';
+import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import { fonts, colors } from '@/styles/constants';
 
@@ -6,7 +6,7 @@ type Props = ComponentPropsWithRef<'input'> & {
   fullWidth?: boolean;
 };
 
-const Input: VFC<Props> = ({ fullWidth = false, ...props }) => {
+const Input: FC<Props> = ({ fullWidth = false, ...props }) => {
   return <input css={[input, fullWidth && fullWidthSize]} {...props} />;
 };
 

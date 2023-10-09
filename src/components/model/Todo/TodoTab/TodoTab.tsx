@@ -1,8 +1,8 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import { css } from '@emotion/react';
 import TabLinkItem from '@/components/model/Todo/TodoTabLinkItem';
 
-const Tab: VFC = () => {
+const Tab: FC = () => {
   return (
     <nav css={tab}>
       <TabLinkItem href="/">All</TabLinkItem>

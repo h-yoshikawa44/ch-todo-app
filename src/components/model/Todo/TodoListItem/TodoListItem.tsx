@@ -1,4 +1,4 @@
-import { VFC, ComponentPropsWithRef } from 'react';
+import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import DeleteIconButton from '@/components/common/DeleteIconButton';
 import { fonts, colors } from '@/styles/constants';
@@ -11,7 +11,7 @@ type Props = ComponentPropsWithRef<'li'> & {
   onDelete?: (id: string) => void;
 };
 
-const TodoListItem: VFC<Props> = ({
+const TodoListItem: FC<Props> = ({
   todoId,
   text,
   checked,
