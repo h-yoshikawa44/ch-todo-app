@@ -1,11 +1,11 @@
-import { VFC, useContext, useCallback } from 'react';
+import { FC, useContext, useCallback } from 'react';
 import { css } from '@emotion/react';
 import { Delete } from '@emotion-icons/material-rounded/Delete';
 import TodoList from '@/components/model/Todo/TodoList';
 import Button from '@/components/common/Button';
 import { TodoContext } from '@/components/context/TodoContext';
 
-const Completed: VFC = () => {
+const Completed: FC = () => {
   const { todoList, changeStatusTodo, deleteTodo, deleteCompletedTodo } =
     useContext(TodoContext);
 

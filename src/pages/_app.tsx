@@ -1,16 +1,27 @@
 import { AppProps } from 'next/app';
-import { Global } from '@emotion/react';
-import 'focus-visible';
+import { Global, CacheProvider, EmotionCache } from '@emotion/react';
 import { globalStyle } from '@/styles/globals';
 import { TodoProvider } from '@/components/context/TodoContext';
+import { createEmotionCache } from '@/lib/emotionCache';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <TodoProvider>
-      <Global styles={globalStyle} />
-      <Component {...pageProps} />
-    </TodoProvider>
-  );
+const clientSideEmotionCache = createEmotionCache();
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
 }
+
+const MyApp = ({
+  Component,
+  pageProps,
+  emotionCache = clientSideEmotionCache,
+}: MyAppProps) => {
+  return (
+    <CacheProvider value={emotionCache}>
+      <TodoProvider>
+        <Global styles={globalStyle} />
+        <Component {...pageProps} />
+      </TodoProvider>
+    </CacheProvider>
+  );
+};
 
 export default MyApp;

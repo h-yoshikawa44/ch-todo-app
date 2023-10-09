@@ -1,10 +1,14 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import Head from 'next/head';
 import { css } from '@emotion/react';
 import Header from '@/components/Header';
 import Footer from '@/components/common/Footer';
 
-const Layout: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+const Layout: FC<Props> = ({ children }) => {
   return (
     <div>
       <div css={container}>

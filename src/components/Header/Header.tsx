@@ -1,9 +1,9 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import { css } from '@emotion/react';
 import Tab from '@/components/model/Todo/TodoTab';
-import { fonts } from '@/styles/constants';
+import { raleway } from '@/styles/fonts';
 
-const Header: VFC = () => {
+const Header: FC = () => {
   return (
     <header>
       <h1 css={title}>#todo</h1>
@@ -14,7 +14,7 @@ const Header: VFC = () => {
 
 const title = css`
   margin: 32px 0 40px;
-  font-family: ${fonts.raleway};
+  font-family: ${raleway.style.fontFamily};
   font-size: 36px;
   font-style: normal;
   font-weight: bold;

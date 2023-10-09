@@ -1,8 +1,8 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import Layout from '@/components/common/Layout';
 import Completed from './Completed';
 
-const CompletedPage: VFC = () => {
+const CompletedPage: FC = () => {
   return (
     <Layout>
       <Completed />

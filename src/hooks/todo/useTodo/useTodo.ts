@@ -61,7 +61,7 @@ const useTodoList = () => {
     });
     return () => {
       window.removeEventListener('storage', (ev: StorageEvent) =>
-        setTodoList(getTodoListFromStorage())
+        setTodoList(getTodoListFromStorage()),
       );
     };
   }, []);

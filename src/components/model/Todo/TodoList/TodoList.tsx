@@ -1,4 +1,4 @@
-import { VFC, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 import { css } from '@emotion/react';
 import TodoListItem from '@/components/model/Todo/TodoListItem';
 import { TodoStatus, Todo } from '@/models/Todo';
@@ -9,7 +9,7 @@ type Props = {
   deleteTodoFunc?: (id: string) => void;
 };
 
-const TodoLlist: VFC<Props> = ({
+const TodoLlist: FC<Props> = ({
   data,
   changeStatusTodoFunc,
   deleteTodoFunc,
@@ -22,7 +22,7 @@ const TodoLlist: VFC<Props> = ({
         changeStatusTodoFunc(id, 'active');
       }
     },
-    [changeStatusTodoFunc]
+    [changeStatusTodoFunc],
   );
 
   const handleDeleteTodo = useCallback(
@@ -31,7 +31,7 @@ const TodoLlist: VFC<Props> = ({
         deleteTodoFunc(id);
       }
     },
-    [deleteTodoFunc]
+    [deleteTodoFunc],
   );
 
   return (

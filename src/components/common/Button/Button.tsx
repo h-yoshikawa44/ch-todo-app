@@ -1,7 +1,8 @@
 import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
-import { createDarkenColor } from '@/lib/color';
-import { fonts, colors } from '@/styles/constants';
+import { darken } from 'polished';
+import { colorRatios, colors } from '@/styles/constants';
+import { montserrat } from '@/styles/fonts';
 
 type Size = 'md' | 'lg';
 type Color = 'primary' | 'danger';
@@ -44,12 +45,12 @@ const button = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: ${fonts.montserrat};
+  font-family: ${montserrat.style.fontFamily};
   font-weight: 600;
   cursor: pointer;
   border: none;
 
-  &:focus:not(.focus-visible) {
+  &:focus:not(:focus-visible) {
     outline-color: transparent;
   }
 `;
@@ -74,7 +75,7 @@ const buttonSize = (size: Size) => {
 const buttonColor = (color: Color) => {
   const textColor = css`
     color: ${colors.white};
-    box-shadow: 0 2px 6px rgba(127, 177, 243, 0.4);
+    box-shadow: 0 2px 6px rgb(127 177 243 / 40%);
   `;
   if (color === 'primary') {
     return css`
@@ -85,8 +86,7 @@ const buttonColor = (color: Color) => {
 
       &:hover,
       &:focus {
-        /* stylelint-disable-next-line function-name-case */
-        background-color: ${createDarkenColor(colors.primary, 0.15)};
+        background-color: ${darken(colorRatios.buttonDarken, colors.primary)};
       }
     `;
   }
@@ -98,15 +98,14 @@ const buttonColor = (color: Color) => {
 
       &:hover,
       &:focus {
-        /* stylelint-disable-next-line function-name-case */
-        background-color: ${createDarkenColor(colors.danger, 0.15)};
+        background-color: ${darken(colorRatios.buttonDarken, colors.danger)};
       }
     `;
   }
 };
 
 const buttonShadow = css`
-  box-shadow: 0 2px 6px rgba(127, 177, 243, 0.4);
+  box-shadow: 0 2px 6px rgb(127 177 243 / 40%);
 `;
 
 const buttonRadius = (radius: string) => {

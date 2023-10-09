@@ -1,7 +1,8 @@
-import { VFC, ComponentPropsWithRef } from 'react';
+import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import DeleteIconButton from '@/components/common/DeleteIconButton';
-import { fonts, colors } from '@/styles/constants';
+import { colors } from '@/styles/constants';
+import { montserrat } from '@/styles/fonts';
 
 type Props = ComponentPropsWithRef<'li'> & {
   todoId: string;
@@ -11,7 +12,7 @@ type Props = ComponentPropsWithRef<'li'> & {
   onDelete?: (id: string) => void;
 };
 
-const TodoListItem: VFC<Props> = ({
+const TodoListItem: FC<Props> = ({
   todoId,
   text,
   checked,
@@ -109,13 +110,13 @@ const customCheckBoxChecked = css`
 
 const labelText = css`
   margin-left: 8px;
-  font-family: ${fonts.montserrat};
+  font-family: ${montserrat.style.fontFamily};
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
 
   &:hover,
-  input[type='checkbox'].focus-visible ~ & {
+  input[type='checkbox']:focus-visible ~ & {
     color: ${colors.blueDarken};
   }
 `;

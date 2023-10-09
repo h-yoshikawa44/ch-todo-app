@@ -1,4 +1,4 @@
-import { VFC, useState, useCallback } from 'react';
+import { FC, useState, useCallback } from 'react';
 import { css } from '@emotion/react';
 import { v4 as uuidv4 } from 'uuid';
 import TodoInput from '@/components/common/Input';
@@ -9,14 +9,14 @@ type Props = {
   addTodoFunc: (data: Todo) => void;
 };
 
-const AddTodoForm: VFC<Props> = ({ addTodoFunc }) => {
+const AddTodoForm: FC<Props> = ({ addTodoFunc }) => {
   const [todoTitle, setTodoTitle] = useState<string>('');
 
   const handleChangeTodoTitle = useCallback(
     (ev: React.ChangeEvent<HTMLInputElement>) => {
       setTodoTitle(ev.target.value);
     },
-    []
+    [],
   );
 
   const handleAddTodo = useCallback(
@@ -30,7 +30,7 @@ const AddTodoForm: VFC<Props> = ({ addTodoFunc }) => {
       addTodoFunc(todoData);
       setTodoTitle('');
     },
-    [todoTitle, addTodoFunc]
+    [todoTitle, addTodoFunc],
   );
 
   return (
