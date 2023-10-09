@@ -54,7 +54,7 @@ I created a simple todo app using LocalStorage.
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [Node.js](https://nodejs.org/)：14.19.0
+- [Node.js](https://nodejs.org/)：20.8.0
 - [TypeScript](https://www.typescriptlang.org/)：4.5.5
 - [React](https://reactjs.org/)：17.0.2
 - [Next.js](https://nextjs.org/)：12.1.0
