@@ -1,7 +1,7 @@
 import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
-import { createDarkenColor } from '@/lib/color';
-import { colors } from '@/styles/constants';
+import { darken } from 'polished';
+import { colorRatios, colors } from '@/styles/constants';
 import { montserrat } from '@/styles/fonts';
 
 type Size = 'md' | 'lg';
@@ -86,8 +86,7 @@ const buttonColor = (color: Color) => {
 
       &:hover,
       &:focus {
-        /* stylelint-disable-next-line function-name-case */
-        background-color: ${createDarkenColor(colors.primary, 0.15)};
+        background-color: ${darken(colorRatios.buttonDarken, colors.primary)};
       }
     `;
   }
@@ -99,8 +98,7 @@ const buttonColor = (color: Color) => {
 
       &:hover,
       &:focus {
-        /* stylelint-disable-next-line function-name-case */
-        background-color: ${createDarkenColor(colors.danger, 0.15)};
+        background-color: ${darken(colorRatios.buttonDarken, colors.danger)};
       }
     `;
   }

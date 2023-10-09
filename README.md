@@ -62,7 +62,7 @@ I created a simple todo app using LocalStorage.
 Other major libraries
 - [emotion](https://emotion.sh/)
 - [emotion-icons](https://github.com/emotion-icons/emotion-icons)
-- [csx](https://typestyle.github.io/#/colors)
+- [polished](https://polished.js.org/)
 - [uuid](https://github.com/uuidjs/uuid)
 - [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env)
 

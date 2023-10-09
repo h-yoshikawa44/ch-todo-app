@@ -1,8 +1,8 @@
 import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import { Delete } from '@emotion-icons/material-rounded/Delete';
-import { colors } from '@/styles/constants';
-import { createRGBAColor } from '@/lib/color';
+import { rgba } from 'polished';
+import { colorRatios, colors } from '@/styles/constants';
 
 type Props = ComponentPropsWithRef<'button'> & {
   todoId: string;
@@ -34,8 +34,7 @@ const deleteButton = css`
 
   &:hover,
   &:focus {
-    /* stylelint-disable-next-line function-name-case */
-    background-color: ${createRGBAColor(colors.danger, 0.3)};
+    background-color: ${rgba(colors.danger, colorRatios.buttonAlpha)};
   }
 
   &:focus:not(:focus-visible) {

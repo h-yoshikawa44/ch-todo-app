@@ -11,7 +11,7 @@ export const breakPoint = {
   md,
   lg,
   xl,
-};
+} as const;
 
 // 色
 const gray = '#828282';
@@ -39,4 +39,13 @@ export const colors = {
   danger,
   border,
   placeHolder,
-};
+} as const;
+
+// 色の変化
+const buttonDarken = 0.2;
+const buttonAlpha = 0.1;
+
+export const colorRatios = {
+  buttonDarken,
+  buttonAlpha,
+} as const;
