@@ -16,7 +16,7 @@ const AddTodoForm: FC<Props> = ({ addTodoFunc }) => {
     (ev: React.ChangeEvent<HTMLInputElement>) => {
       setTodoTitle(ev.target.value);
     },
-    []
+    [],
   );
 
   const handleAddTodo = useCallback(
@@ -30,7 +30,7 @@ const AddTodoForm: FC<Props> = ({ addTodoFunc }) => {
       addTodoFunc(todoData);
       setTodoTitle('');
     },
-    [todoTitle, addTodoFunc]
+    [todoTitle, addTodoFunc],
   );
 
   return (

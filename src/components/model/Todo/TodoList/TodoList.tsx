@@ -22,7 +22,7 @@ const TodoLlist: FC<Props> = ({
         changeStatusTodoFunc(id, 'active');
       }
     },
-    [changeStatusTodoFunc]
+    [changeStatusTodoFunc],
   );
 
   const handleDeleteTodo = useCallback(
@@ -31,7 +31,7 @@ const TodoLlist: FC<Props> = ({
         deleteTodoFunc(id);
       }
     },
-    [deleteTodoFunc]
+    [deleteTodoFunc],
   );
 
   return (
