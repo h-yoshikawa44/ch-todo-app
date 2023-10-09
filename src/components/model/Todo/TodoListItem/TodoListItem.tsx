@@ -116,7 +116,7 @@ const labelText = css`
   line-height: 22px;
 
   &:hover,
-  input[type='checkbox'].focus-visible ~ & {
+  input[type='checkbox']:focus-visible ~ & {
     color: ${colors.blueDarken};
   }
 `;

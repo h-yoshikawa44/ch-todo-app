@@ -50,7 +50,7 @@ const button = css`
   cursor: pointer;
   border: none;
 
-  &:focus:not(.focus-visible) {
+  &:focus:not(:focus-visible) {
     outline-color: transparent;
   }
 `;

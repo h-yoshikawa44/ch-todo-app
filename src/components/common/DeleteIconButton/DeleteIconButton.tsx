@@ -38,7 +38,7 @@ const deleteButton = css`
     background-color: ${createRGBAColor(colors.danger, 0.3)};
   }
 
-  &:focus:not(.focus-visible) {
+  &:focus:not(:focus-visible) {
     outline: none;
   }
 `;
