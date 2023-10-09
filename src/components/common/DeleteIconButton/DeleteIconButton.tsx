@@ -26,11 +26,11 @@ const DeleteIconButton: FC<Props> = ({ todoId, onDelete, ...props }) => {
 const deleteButton = css`
   width: 32px;
   height: 32px;
+  color: ${colors.danger};
   background-color: ${colors.white};
   border: none;
   border-radius: 50%;
   transition: background-color 0.3s;
-  color: ${colors.danger};
 
   &:hover,
   &:focus {

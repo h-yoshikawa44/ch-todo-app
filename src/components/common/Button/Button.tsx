@@ -75,7 +75,7 @@ const buttonSize = (size: Size) => {
 const buttonColor = (color: Color) => {
   const textColor = css`
     color: ${colors.white};
-    box-shadow: 0 2px 6px rgba(127, 177, 243, 0.4);
+    box-shadow: 0 2px 6px rgb(127 177 243 / 40%);
   `;
   if (color === 'primary') {
     return css`
@@ -107,7 +107,7 @@ const buttonColor = (color: Color) => {
 };
 
 const buttonShadow = css`
-  box-shadow: 0 2px 6px rgba(127, 177, 243, 0.4);
+  box-shadow: 0 2px 6px rgb(127 177 243 / 40%);
 `;
 
 const buttonRadius = (radius: string) => {

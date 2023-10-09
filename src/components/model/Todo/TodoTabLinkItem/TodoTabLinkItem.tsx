@@ -31,7 +31,7 @@ const tabItemLink = css`
 
   &:hover,
   &:focus {
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: rgb(0 0 0 / 4%);
   }
 
   &:focus:not(.focus-visible) {
@@ -50,7 +50,6 @@ const selectedTab = css`
     content: '';
     background-color: ${colors.primary};
     border-radius: 4px 4px 0 0;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
   }
 `;
