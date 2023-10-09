@@ -13,15 +13,6 @@ export const breakPoint = {
   xl,
 };
 
-// フォント
-const raleway = 'Raleway, sans-serif';
-const montserrat = 'Montserrat, sans-serif';
-
-export const fonts = {
-  raleway,
-  montserrat,
-};
-
 // 色
 const gray = '#828282';
 const grayLighten = '#bdbdbd';

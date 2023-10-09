@@ -1,7 +1,8 @@
 import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import { createDarkenColor } from '@/lib/color';
-import { fonts, colors } from '@/styles/constants';
+import { colors } from '@/styles/constants';
+import { montserrat } from '@/styles/fonts';
 
 type Size = 'md' | 'lg';
 type Color = 'primary' | 'danger';
@@ -44,7 +45,7 @@ const button = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: ${fonts.montserrat};
+  font-family: ${montserrat.style.fontFamily};
   font-weight: 600;
   cursor: pointer;
   border: none;

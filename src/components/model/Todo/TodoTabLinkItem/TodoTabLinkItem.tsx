@@ -2,7 +2,8 @@ import { FC, ComponentPropsWithRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { css } from '@emotion/react';
-import { colors, fonts } from '@/styles/constants';
+import { colors } from '@/styles/constants';
+import { montserrat } from '@/styles/fonts';
 
 type Props = ComponentPropsWithRef<typeof Link>;
 
@@ -20,7 +21,7 @@ const tabItemLink = css`
   position: relative;
   width: 100%;
   padding: 16px 12%;
-  font-family: ${fonts.montserrat};
+  font-family: ${montserrat.style.fontFamily};
   font-size: 14px;
   font-weight: 600;
   line-height: 17px;

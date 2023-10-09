@@ -1,6 +1,7 @@
 import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
-import { fonts, colors } from '@/styles/constants';
+import { colors } from '@/styles/constants';
+import { montserrat } from '@/styles/fonts';
 
 type Props = ComponentPropsWithRef<'input'> & {
   fullWidth?: boolean;
@@ -11,8 +12,8 @@ const Input: FC<Props> = ({ fullWidth = false, ...props }) => {
 };
 
 const input = css`
-  padding: 16px 16px;
-  font-family: ${fonts.montserrat};
+  padding: 16px;
+  font-family: ${montserrat.style.fontFamily};
   font-size: 14px;
   font-weight: normal;
   line-height: 17px;

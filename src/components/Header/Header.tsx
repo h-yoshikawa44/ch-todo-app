@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { css } from '@emotion/react';
 import Tab from '@/components/model/Todo/TodoTab';
-import { fonts } from '@/styles/constants';
+import { raleway } from '@/styles/fonts';
 
 const Header: FC = () => {
   return (
@@ -14,7 +14,7 @@ const Header: FC = () => {
 
 const title = css`
   margin: 32px 0 40px;
-  font-family: ${fonts.raleway};
+  font-family: ${raleway.style.fontFamily};
   font-size: 36px;
   font-style: normal;
   font-weight: bold;
