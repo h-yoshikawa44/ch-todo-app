@@ -64,7 +64,7 @@ Other major libraries
 - [emotion-icons](https://github.com/emotion-icons/emotion-icons)
 - [csx](https://typestyle.github.io/#/colors)
 - [uuid](https://github.com/uuidjs/uuid)
-- [focus-visible](https://github.com/WICG/focus-visible)
+- [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env)
 
 ## Features
 
