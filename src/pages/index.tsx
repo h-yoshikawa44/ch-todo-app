@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import { css } from '@emotion/react';
 import HomePage from '@/components/page/Home';
 
 const Home = () => {

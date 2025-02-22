@@ -3,7 +3,7 @@
 <h1 align="center">Todo app</h1>
 
 <div align="center">
-   Solution for a challenge from  <a href="http://legacy.devchallenges.io" target="_blank">Devchallenges.io</a>.
+   Solution for a challenge from Devchallenges.io.
 </div>
 
 <div align="center">
@@ -11,16 +11,11 @@
     <a href="https://ch-todo-app-h-yoshikawa44.vercel.app/">
       Demo
     </a>
-    <span> | </span>
-    <a href="https://legacy.devchallenges.io/solutions/BTvVlLhztEQ8Fz8UJ1Rf">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://legacy.devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5">
-      Challenge
-    </a>
   </h3>
 </div>
+
+*The site is now closed, but this assignment was originally posted at `https://legacy.devchallenges.io/solutions/BTvVlLhztEQ8Fz8UJ1Rf`.  
+（My assignment submission page at the time: `https://legacy.devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5`.）
 
 <!-- TABLE OF CONTENTS -->
 
@@ -40,13 +35,13 @@
 ## Overview
 
 all  
-<img src="/screenshots/all.png" alt="overview - all" width="90%">
+<img src="./screenshots/all.png" alt="overview - all" width="90%">
 
 active  
-<img src="/screenshots/active.png" alt="overview - active" width="90%">
+<img src="./screenshots/active.png" alt="overview - active" width="90%">
 
 completed  
-<img src="/screenshots/completed.png" alt="overview - completed" width="90%">
+<img src="./screenshots/completed.png" alt="overview - completed" width="90%">
 
 I created a simple todo app using LocalStorage.
 
@@ -54,23 +49,23 @@ I created a simple todo app using LocalStorage.
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [Node.js](https://nodejs.org/)：20.8.0
-- [TypeScript](https://www.typescriptlang.org/)：5.2.2
-- [React](https://reactjs.org/)：18.2.0
-- [Next.js](https://nextjs.org/)：13.5.4
+- [Node.js](https://nodejs.org/)：22.13.1
+- [TypeScript](https://www.typescriptlang.org/)：5.7.3
+- [React](https://reactjs.org/)：19.0.0
+- [Next.js](https://nextjs.org/)：15.1.7
 
 Other major libraries
+- [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env)
 - [emotion](https://emotion.sh/)
 - [emotion-icons](https://github.com/emotion-icons/emotion-icons)
 - [polished](https://polished.js.org/)
 - [uuid](https://github.com/uuidjs/uuid)
-- [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env)
 
 ## Features
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-This application/site was created as a submission to a [DevChallenges](https://legacy.devchallenges.io/challenges) challenge. The [challenge](https://legacy.devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
+This application/site was created as a submission to a DevChallenges challenge. The challenge was to build an application to complete the given user stories.
 
 - [x] User story: I can add a new task
 - [x] User story: I can complete a task
@@ -119,6 +114,6 @@ npm run dev
 
 ## Contact
 
-- Website：[h-yoshikawa44.com](https://h-yoshikawa44.com)
-- GitHub：[@h-yoshikawa44](https://github.com/h-yoshikawa44)
-- Twitter：[@yoshi44_lion](https://twitter.com/yoshi44_lion)
+- Website: [h-yoshikawa44.com](https://h-yoshikawa44.com)
+- GitHub: [@h-yoshikawa44](https://github.com/h-yoshikawa44)
+- X: [@yoshi44_lion](https://x.com/yoshi44_lion)

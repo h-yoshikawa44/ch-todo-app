@@ -17,9 +17,9 @@ const input = css`
   font-size: 14px;
   font-weight: normal;
   line-height: 17px;
+  outline: none;
   border: 1px solid ${colors.border};
   border-radius: 12px;
-  outline: none;
   transition: border-color 0.3s;
 
   &::placeholder {
