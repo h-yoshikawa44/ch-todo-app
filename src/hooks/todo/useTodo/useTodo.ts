@@ -56,11 +56,11 @@ const useTodoList = () => {
 
   useEffect(() => {
     setTodoList(getTodoListFromStorage());
-    window.addEventListener('storage', (ev: StorageEvent) => {
+    window.addEventListener('storage', (_ev: StorageEvent) => {
       setTodoList(getTodoListFromStorage());
     });
     return () => {
-      window.removeEventListener('storage', (ev: StorageEvent) =>
+      window.removeEventListener('storage', (_ev: StorageEvent) =>
         setTodoList(getTodoListFromStorage()),
       );
     };
