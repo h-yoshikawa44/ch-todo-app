@@ -57,10 +57,10 @@ const checkBox = css`
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
 `;
 
 const customCheckBox = css`
@@ -92,8 +92,8 @@ const customCheckBox = css`
     border-bottom: 2px solid ${colors.white};
     border-left: 2px solid ${colors.white};
     opacity: 0;
-    transition: opacity 0.5s;
     transform: rotate(-40deg);
+    transition: opacity 0.5s;
   }
 `;
 
