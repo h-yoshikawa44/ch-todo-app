@@ -51,7 +51,7 @@ const AddTodoForm: FC<Props> = ({ addTodoFunc }) => {
 const addTodoForm = css`
   display: grid;
   grid-template-columns: 1fr max-content;
-  grid-column-gap: 24px;
+  column-gap: 24px;
 `;
 
 export default AddTodoForm;
