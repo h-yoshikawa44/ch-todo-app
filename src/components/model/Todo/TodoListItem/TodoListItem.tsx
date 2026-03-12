@@ -59,7 +59,6 @@ const checkBox = css`
   overflow: hidden;
   white-space: nowrap;
   border: 0;
-  clip: rect(0 0 0 0);
   clip-path: inset(50%);
 `;
 
