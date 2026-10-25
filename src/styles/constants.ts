@@ -42,7 +42,8 @@ export const colors = {
 } as const;
 
 // 色の変化
-const buttonDarken = 0.2;
+// darken は 0〜100 の割合で指定
+const buttonDarken = 20;
 const buttonAlpha = 0.1;
 
 export const colorRatios = {
