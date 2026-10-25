@@ -58,7 +58,7 @@ Other major libraries
 - [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env)
 - [emotion](https://emotion.sh/)
 - [emotion-icons](https://github.com/emotion-icons/emotion-icons)
-- [polished](https://polished.js.org/)
+- [@ctrl/tinycolor](https://tinycolor.vercel.app/)
 - [uuid](https://github.com/uuidjs/uuid)
 
 ## Features

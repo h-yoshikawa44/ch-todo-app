@@ -1,6 +1,6 @@
 import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
-import { darken } from 'polished';
+import { TinyColor } from '@ctrl/tinycolor';
 import { colorRatios, colors } from '@/styles/constants';
 import { montserrat } from '@/styles/fonts';
 
@@ -86,7 +86,7 @@ const buttonColor = (color: Color) => {
 
       &:hover,
       &:focus {
-        background-color: ${darken(colorRatios.buttonDarken, colors.primary)};
+        background-color: ${new TinyColor(colors.primary).darken(colorRatios.buttonDarken).toHexString()};
       }
     `;
   }
@@ -98,7 +98,7 @@ const buttonColor = (color: Color) => {
 
       &:hover,
       &:focus {
-        background-color: ${darken(colorRatios.buttonDarken, colors.danger)};
+        background-color: ${new TinyColor(colors.danger).darken(colorRatios.buttonDarken).toHexString()};
       }
     `;
   }

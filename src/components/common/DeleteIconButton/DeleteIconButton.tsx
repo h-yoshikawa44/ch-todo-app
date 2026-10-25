@@ -1,7 +1,7 @@
 import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import { Delete } from '@emotion-icons/material-rounded/Delete';
-import { rgba } from 'polished';
+import { TinyColor } from '@ctrl/tinycolor';
 import { colorRatios, colors } from '@/styles/constants';
 
 type Props = ComponentPropsWithRef<'button'> & {
@@ -34,7 +34,7 @@ const deleteButton = css`
 
   &:hover,
   &:focus {
-    background-color: ${rgba(colors.danger, colorRatios.buttonAlpha)};
+    background-color: ${new TinyColor(colors.danger).setAlpha(colorRatios.buttonAlpha).toRgbString()};
   }
 
   &:focus:not(:focus-visible) {
